@@ -36,7 +36,6 @@ dependencies {
     // PDFTron SDK dependencies
     implementation "com.pdftron:pdftron:6.8.7"
     implementation "com.pdftron:tools:6.8.7"
-    implementation "com.pdftron:demo:6.8.7"
 
     implementation 'com.android.support:multidex:1.0.3'
 }

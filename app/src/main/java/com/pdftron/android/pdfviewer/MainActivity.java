@@ -6,7 +6,7 @@ import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.pdftron.demo.app.SimpleReaderActivity;
+import com.pdftron.pdf.controls.DocumentActivity;
 
 import java.io.File;
 
@@ -15,8 +15,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
         // Open our sample document in the 'res/raw' resource folder
-        SimpleReaderActivity.openDocument(this, R.raw.sample);
+        DocumentActivity.openDocument(this, R.raw.sample);
     }
 
     /**
@@ -27,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
      */
     private void openLocalDocument(Context context, String localFilePath) {
         final Uri localFile = Uri.fromFile(new File(localFilePath));
-        SimpleReaderActivity.openDocument(context, localFile);
+        DocumentActivity.openDocument(context, localFile);
     }
 
     /**
@@ -37,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
      * @param contentUri a content URI that references a document
      */
     private void openContentUriDocument(Context context, Uri contentUri) {
-        SimpleReaderActivity.openDocument(context, contentUri);
+        DocumentActivity.openDocument(context, contentUri);
     }
 
     /**
@@ -48,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
      */
     private void openHttpDocument(Context context, String url) {
         final Uri fileLink = Uri.parse(url);
-        SimpleReaderActivity.openDocument(context, fileLink);
+        DocumentActivity.openDocument(context, fileLink);
     }
 
     /**
@@ -57,6 +58,6 @@ public class MainActivity extends AppCompatActivity {
      * @param fileResId resource id to a document in res/raw
      */
     private void openRawResourceDocument(Context context, @IdRes int fileResId) {
-        SimpleReaderActivity.openDocument(context, fileResId);
+        DocumentActivity.openDocument(context, fileResId);
     }
 }
