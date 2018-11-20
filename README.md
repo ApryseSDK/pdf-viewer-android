@@ -1,3 +1,3 @@
-# How to add a PDF viewer to your Android app
+# Add a PDF viewer using the PDFTron Android SDK
 
 ### This project contains the source code for [this tutorial](https://www.pdftron.com/documentation/android/guides/getting-started/try-demo).
