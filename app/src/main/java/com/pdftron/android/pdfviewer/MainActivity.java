@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         // Open our sample document in the 'res/raw' resource folder
         DocumentActivity.openDocument(this, R.raw.sample);
+        finish();
     }
 
     /**
