@@ -19,10 +19,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Open our sample document in the 'res/raw' resource folder
-//        DocumentActivity.openDocument(this, R.raw.sample);
-
-        // Open HTTPS sample file
-        openHttpDocument(this, "https://pdftron.s3.amazonaws.com/downloads/pl/PDFTRON_mobile_about.pdf");
+        openRawResourceDocument(this, R.raw.sample);
 
         finish();
     }
