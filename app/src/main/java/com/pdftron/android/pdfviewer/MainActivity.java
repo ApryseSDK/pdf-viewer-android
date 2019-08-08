@@ -6,6 +6,7 @@ import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.pdftron.pdf.config.ViewerConfig;
 import com.pdftron.pdf.controls.DocumentActivity;
 
 import java.io.File;
@@ -16,8 +17,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         // Open our sample document in the 'res/raw' resource folder
-        DocumentActivity.openDocument(this, R.raw.sample);
+//        DocumentActivity.openDocument(this, R.raw.sample);
+
+        // Open HTTPS sample file
+        openHttpDocument(this, "https://pdftron.s3.amazonaws.com/downloads/pl/PDFTRON_mobile_about.pdf");
+
         finish();
     }
 
@@ -50,7 +56,8 @@ public class MainActivity extends AppCompatActivity {
      */
     private void openHttpDocument(Context context, String url) {
         final Uri fileLink = Uri.parse(url);
-        DocumentActivity.openDocument(context, fileLink);
+        ViewerConfig config = new ViewerConfig.Builder().openUrlCachePath(this.getCacheDir().getAbsolutePath()).build();
+        DocumentActivity.openDocument(context, fileLink, config);
     }
 
     /**
