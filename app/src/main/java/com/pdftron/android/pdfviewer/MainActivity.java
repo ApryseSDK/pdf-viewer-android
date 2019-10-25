@@ -2,8 +2,8 @@ package com.pdftron.android.pdfviewer;
 
 import android.content.Context;
 import android.net.Uri;
-import android.support.annotation.IdRes;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.IdRes;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.pdftron.pdf.config.ViewerConfig;
